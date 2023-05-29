@@ -1,4 +1,7 @@
-const selectElement = document.querySelector('.breed-select');
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
+
+const selectElement = document.querySelector('#single');
 
 export function renderSelect(data) {
   const markup = data
@@ -8,4 +11,11 @@ export function renderSelect(data) {
     .join('');
 
   selectElement.insertAdjacentHTML('beforeend', markup);
+
+  new SlimSelect({
+    select: '#single',
+    settings: {
+      placeholderText: 'Please, choose a breed',
+    },
+  });
 }
